@@ -14,6 +14,24 @@ npm install
 npm run dev
 ```
 
+## Setup backend first
+
+### Installs
+
+```bash
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+```
+
+```bash
+sudo dpkg -i cloudflared-linux-amd64.deb
+```
+
+### Run
+
+```bash
+cloudflared tunnel --protocol http2 --url http://localhost:8000
+```
+
 Opens at **http://localhost:5173**
 
 ## Configuration
@@ -22,12 +40,10 @@ Click the ⚙️ **Settings** icon (top-right) and set:
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| **Server URL** | URL of your remote FastAPI backend | `http://192.168.1.100:8000` |
+| **Server URL** | URL of your remote FastAPI backend | `https://receptor-supporting-programmer-dramatically.trycloudflare.com` |
 | **Layouts JSON Path** | Absolute path to the JSON file **on the server** | `/home/user/data/layouts.json` |
 | **Furniture Filter** | Optional comma-separated furniture items to require | `bed, wardrobe` |
 | **Your Name** | Display name shown in the greeting | `Sohith` |
-| **LLM Model** | Ollama model on the server | `qwen3.6:35b` |
-| **Embedder** | Sentence transformer model | `BAAI/bge-m3` |
 
 ## How It Works
 
