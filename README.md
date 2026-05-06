@@ -14,6 +14,8 @@ npm install
 npm run dev
 ```
 
+Opens at **http://localhost:5173**
+
 ## Setup backend first
 
 ### Installs
@@ -32,7 +34,11 @@ sudo dpkg -i cloudflared-linux-amd64.deb
 cloudflared tunnel --protocol http2 --url http://localhost:8000
 ```
 
-Opens at **http://localhost:5173**
+```bash
+uvicorn backend_server_vlm:app --host 0.0.0.0 --port 8000
+```
+
+
 
 ## Configuration
 
